@@ -1,0 +1,24 @@
+.App-header {
+  background-color: #050505;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  border-bottom: 1px solid #b5aeae;
+  color: white;
+}
+
+.App-logo {
+  height: 8vh;
+  width: 80%;
+  margin: 0 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .App-logo {
+    height: 6vh;
+    width: 50%;
+  }
+}

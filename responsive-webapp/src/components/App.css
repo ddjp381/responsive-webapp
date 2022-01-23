@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.App-content {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
