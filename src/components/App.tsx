@@ -1,4 +1,3 @@
-import React from "react";
 import { Cats } from "./cats";
 import { Header } from "./header";
 import { Sidebar } from "./sidebar";
@@ -6,7 +5,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div className="App">
+    <div data-testid='app' className="App">
       <Header />
       <div className="App-content">
         <Sidebar />
