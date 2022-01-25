@@ -3,3 +3,22 @@
   width: "100%";
   flex: 1;
 }
+
+.Cats-Row-Container {
+  padding: 0 20px;
+}
+
+.Cats-Row {
+  height: 30px;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Cats-Row > h3 {
+  padding: 0 30px;
+}
+
+.Cats-Row:nth-child(2n) {
+  background-color: grey;
+}

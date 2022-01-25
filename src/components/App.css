@@ -7,3 +7,13 @@
   flex-direction: row;
   flex: 1;
 }
+
+.App-Container {
+  height: calc(100vh - 81px);
+  overflow-y: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}

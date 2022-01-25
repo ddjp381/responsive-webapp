@@ -1,7 +1,7 @@
 import "./Sidebar.css";
 
 const Sidebar = () => (
-  <div className="Sidebar">
+  <div className="Sidebar App-Container">
     <ul className="Sidebar-list">
       <li>
         <a href="#">Cat Breeds</a>

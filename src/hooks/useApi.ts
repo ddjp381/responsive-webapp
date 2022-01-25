@@ -9,7 +9,7 @@ interface ApiRequest {
 const useApi = () => {
   const [isLoading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
-  const [error, setError] = useState<Array<string> | null>(null);
+  const [error, setError] = useState<any | null>(null);
   const [request, setRequest] = useState<ApiRequest | null>(null);
 
   useEffect(() => {
@@ -19,13 +19,13 @@ const useApi = () => {
       setResponse(null);
 
       try {
-        const data = await axios(request!.url, request!.options);
+        const data: any = await axios(request!.url, request!.options);
         if (data.status === 200 || data.status === 201) {
           setResponse(data);
         } else {
           throw new Error(data);
         }
-      } catch (respError) {
+      } catch (respError: any) {
         console.error({ respError });
         setError(respError);
       } finally {
