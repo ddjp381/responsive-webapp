@@ -5,23 +5,21 @@ import { getDefaultOptions } from "../../hooks/defaultOptions";
 import CatsRow from "./CatsRow";
 import "./Cats.css";
 
-
 interface CatDetails {
-  name: string
+  name: string;
 }
 
 interface Response {
-  config: Object,
-  data: CatDetails[]
+  config: Object;
+  data: CatDetails[];
 }
 
 interface CatBreeds {
-  setRequest: Function,
-  response: Response | null,
-  isLoading: Boolean,
-  error: any
+  setRequest: Function;
+  response: Response | null;
+  isLoading: Boolean;
+  error: any;
 }
-
 
 const Cats = () => {
   const getCatBreeds: CatBreeds = useApi();
@@ -40,7 +38,12 @@ const Cats = () => {
   }, []);
 
   useEffect(() => {
-    return setData(getCatBreeds.response?.data.reduce((acc: string[], obj: CatDetails) => [...acc, obj.name], []) || []);
+    return setData(
+      getCatBreeds.response?.data.reduce(
+        (acc: string[], obj: CatDetails) => [...acc, obj.name],
+        []
+      ) || []
+    );
   }, [getCatBreeds.response]);
 
   const handleDelete = (index: number) => {
@@ -63,11 +66,11 @@ const Cats = () => {
     });
   };
 
-  return <div className="Cats App-Container">
-    <h2>List of Cat Names</h2>
-    <div className="Cats-Row-Container">
-      {
-        data?.map((name: string, index: number) =>
+  return (
+    <div className='Cats App-Container'>
+      <h2>List of Cat Names</h2>
+      <div className='Cats-Row-Container'>
+        {data?.map((name: string, index: number) => (
           <CatsRow
             key={`cats-row-${index}`}
             name={name}
@@ -75,10 +78,10 @@ const Cats = () => {
             handleEdit={handleEdit}
             index={index}
           />
-        )
-      }
+        ))}
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default Cats;
