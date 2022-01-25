@@ -69,6 +69,7 @@ const Cats = () => {
       {
         data?.map((name: string, index: number) =>
           <CatsRow
+            key={`cats-row-${index}`}
             name={name}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
